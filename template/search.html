@@ -1,0 +1,18 @@
+<div class="sr-container">
+	<div class="left-div">
+		<i class="fa fa-search" aria-hidden="true"></i>
+	</div>
+	<div>
+		<input class="search-input" type="search" placeholder="SEARCH (Planet Name)" ng-model="vm.inp" ng-keyup="vm.srchFunc()" />
+	</div>
+</div>
+<div  class="div-no" ng-if="vm.inp.length">
+	<ul  class="srch-ul" ng-show="vm.items!='' || vm.items!='0'">
+		<li ng-class="{list:item.population<=2500000000 || item.population=='unknown',listmd:item.population > 2500000000 && item.population <= 5000000000,listlg:item.population > 5000000000}" ng-repeat="item in vm.items">
+			<div class="li-first">{{item.name}}</div>
+			<div class="li-second"><i class="fa fa-users fa-lg" aria-hidden="true"></i> {{item.population}}</div>		
+		</li>
+	</ul>
+</div>
+<br/>
+
